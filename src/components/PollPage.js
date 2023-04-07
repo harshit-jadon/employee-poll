@@ -14,6 +14,9 @@ const PollPage = ({ dispatch, authedUser, question, author }) => {
   const hasVotedForOptionTwo = question.optionTwo.votes.includes(authedUser.id);
   const hasVoted = hasVotedForOptionOne || hasVotedForOptionTwo;
 
+  console.log("XXX >>", hasVotedForOptionOne);
+  console.log("YYY >>", hasVotedForOptionTwo);
+
   const handleOptionOne = (e) => {
     e.preventDefault();
     dispatch(handleAddAnswer(question.id, "optionOne"));
@@ -51,27 +54,23 @@ const PollPage = ({ dispatch, authedUser, question, author }) => {
         <img className="img-pp" src={author.avatarURL} alt="Profile" />
       </div>
 
-      <div >
-        <h2 >Would you rather?</h2>
+      <div>
+        <h2>Would You Rather</h2>
       </div>
 
       <div className="select-answer">
         <button
           onClick={handleOptionOne}
           disabled={hasVoted}
-          // className={
-          //   "p-2 rounded-xl bg-zinc-100 hover:shadow-xl transition " +
-          //   (hasVotedForOptionOne ? "bg-lime-400" : "")
-          // }
-          className="button-div"
+          className={
+            hasVotedForOptionOne && !hasVotedForOptionTwo
+              ? "already-vote"
+              : "button-div"
+          }
         >
-          {/* <div className={hasVotedForOptionOne ? "chosen" : ""}> */}
           <div>
             <p>{question.optionOne.text}</p>
-            {!hasVoted && (
-              // <p className="underline underline-offset-4 mb-3">Click</p>
-              <p className="clickButton">Click</p>
-            )}
+            {!hasVoted && <p className="clickButton">Click</p>}
             {hasVoted && (
               <p>
                 Votes: {question.optionOne.votes.length} (
@@ -84,17 +83,14 @@ const PollPage = ({ dispatch, authedUser, question, author }) => {
         <button
           onClick={handleOptionTwo}
           disabled={hasVoted}
-          // className={
-          //   "p-2 rounded-xl bg-zinc-100 hover:shadow-xl transition " +
-          //   (hasVotedForOptionTwo ? "bg-lime-400" : "")
-          // }
-          className="button-div"
+          className={
+            !hasVotedForOptionOne && hasVotedForOptionTwo
+              ? "already-vote"
+              : "button-div"
+          }
         >
           <p>{question.optionTwo.text}</p>
-          {!hasVoted && (
-            // <p className="underline underline-offset-4 mb-3">Click</p>
-            <p className="clickButton">Click</p>
-          )}
+          {!hasVoted && <p className="clickButton">Click</p>}
           {hasVoted && (
             <p>
               Votes: {question.optionTwo.votes.length} (
@@ -118,7 +114,6 @@ const mapStateToProps = ({ authedUser, users, questions }) => {
     return { authedUser, question, author };
   } catch (e) {
     return <Navigate to="/404" />;
-    // throw new Error(`Question or user is not found.\n ${e}`);
   }
 };
 
