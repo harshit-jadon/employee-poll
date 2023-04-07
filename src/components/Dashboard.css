@@ -9,9 +9,10 @@
 }
 
 .type-questions h2 {
-  margin-top: 5px;
+  margin-top: 0px;
   border-bottom: 1px solid gray;
   padding-bottom: 10px;
+  background-color: lightgray;
 }
 
 .card-container-div {

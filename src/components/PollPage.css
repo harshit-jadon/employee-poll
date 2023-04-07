@@ -1,0 +1,40 @@
+.poll-page-dev {
+  text-align: center;
+}
+
+.heading{
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.img-pp {
+  margin-top: 20px;
+  max-width: 20%;
+  max-height: 20%;
+}
+
+.select-answer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.button-div{
+    max-width: 30%;
+    min-width: 30%;
+    background: white;
+    border: 1px solid gray;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.clickButton{
+    margin: 0;
+    background-color: rgb(69, 216, 167);
+    padding: 8px;
+    color: white;
+}
+
+.clickButton:hover{
+    background-color: rgb(8, 107, 74);
+}
