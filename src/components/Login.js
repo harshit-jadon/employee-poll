@@ -9,6 +9,7 @@ const Login = ({ dispatch, loggedIn }) => {
   const [username, setUsername] = useState("sarahedo");
   const [password, setPassword] = useState("password123");
 
+
   if (loggedIn) {
     const urlParams = new URLSearchParams(window.location.search);
     const redirectUrl = urlParams.get("redirectTo");

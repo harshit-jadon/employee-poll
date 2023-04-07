@@ -16,7 +16,6 @@
 
 .table-div th{
     border: 1px solid gray;
-    border-radius: 5px;
     border-collapse: collapse;
     font-size: 12px;
     padding: 12px;
@@ -30,7 +29,6 @@
     font-size: 12px;
     padding: 12px;
     text-align: left;
-    border-radius: 5px;
 }
 
 .employee-poll-details{
@@ -40,4 +38,6 @@
     max-width: 50px;
     max-height: 25px;
     margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
 }

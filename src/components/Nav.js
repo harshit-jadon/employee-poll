@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleLogout } from "../actions/authedUser";
 import "./Nav.css";
-import LoginPageSvg from "../images/employee1.png";
 
-const Nav = ({ dispatch, authedUserId }) => {
+const Nav = ({ dispatch, authedUserId, authedUserAvatar }) => {
   const logout = (e) => {
     e.preventDefault();
     dispatch(handleLogout());
   };
+
 
   return (
     <nav className="nav-bar">
@@ -24,10 +24,13 @@ const Nav = ({ dispatch, authedUserId }) => {
         </Link>
       </div>
       <div className="nav-bar-detail">
-        <span className="span" data-testid="user-information">
-          <img src={LoginPageSvg} alt="userImage"></img> {authedUserId}
-        </span>
-        <button className="button" onClick={logout}>
+        <div className="nav-bar-detail">
+          <img className="pfl-img" src={authedUserAvatar} alt="userImage"></img>
+          <span className="span" data-testid="user-information">
+            {authedUserId}
+          </span>
+        </div>
+        <button className="logoutbutton" onClick={logout}>
           Logout
         </button>
       </div>
@@ -37,6 +40,7 @@ const Nav = ({ dispatch, authedUserId }) => {
 
 const mapStateToProps = ({ authedUser }) => ({
   authedUserId: authedUser.id,
+  authedUserAvatar: authedUser.avatarURL,
 });
 
 export default connect(mapStateToProps)(Nav);

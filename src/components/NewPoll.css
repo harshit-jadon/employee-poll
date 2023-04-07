@@ -47,15 +47,11 @@
 }
 
 .submit-poll{
-    background-color: #87CEEB;
+    background-color: darkblue;
     color: #FFFFFF;
     font-size: 20px;
     font-weight: 400;
     border-radius: 10px;
     border: none;
     padding: 5px 10px 5px 10px;
-}
-
-.submit-poll:hover{
-    background-color: darkblue;
 }

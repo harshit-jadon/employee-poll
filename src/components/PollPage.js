@@ -14,9 +14,6 @@ const PollPage = ({ dispatch, authedUser, question, author }) => {
   const hasVotedForOptionTwo = question.optionTwo.votes.includes(authedUser.id);
   const hasVoted = hasVotedForOptionOne || hasVotedForOptionTwo;
 
-  console.log("XXX >>", hasVotedForOptionOne);
-  console.log("YYY >>", hasVotedForOptionTwo);
-
   const handleOptionOne = (e) => {
     e.preventDefault();
     dispatch(handleAddAnswer(question.id, "optionOne"));

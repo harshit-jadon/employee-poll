@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import "./Leaderboard.css";
-import LoginPageSvg from "../images/employee1.png";
 
 const Leaderboard = ({ users }) => {
+
   return (
     <div className="table-div">
       <table>
@@ -24,7 +24,7 @@ const Leaderboard = ({ users }) => {
             <tr key={user.id}>
               <td>
                 <div className="employee-poll-details">
-                  <img className="img-details" src={LoginPageSvg} alt="img"></img>
+                  <img className="img-details" src={user.avatarURL} alt="img"></img>
                   <div><span>{user.name}</span>
                 <br />
                 {user.id}</div>
