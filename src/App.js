@@ -8,9 +8,7 @@ import Login from "./components/Login";
 function App() {
   return (
     <div>
-      <Routes>
-      <Route path="/login" exact element={<Login/>}/>
-      </Routes>
+      <Login/>
     </div>
   );
 }
