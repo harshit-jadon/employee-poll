@@ -33,7 +33,6 @@ describe("App", () => {
 
     it("should show Dashboard page when logged in", () => {
         store.dispatch(setAuthedUser({id: "", password: ""}));
-
         const component = render(
             <Provider store={store}>
                 <BrowserRouter>

@@ -12,7 +12,7 @@ const Dashboard = ({ authedUser, questions, users }) => {
     question.optionTwo.votes.includes(authedUser.id);
 
   return (
-    <div className="main-container">
+    <div className="main-container" data-testid="heading">
       <div className="type-questions">
         <h2>New Questions</h2>
         <div className="card-container-div">

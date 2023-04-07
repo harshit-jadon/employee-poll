@@ -33,7 +33,7 @@ describe("Nav", () => {
         );
 
         const userSpanElement = component.getByTestId("user-information");
-        expect(userSpanElement.textContent).toBe("User: sarahedo");
+        expect(userSpanElement.textContent).toBe("sarahedo");
 
     });
 });
