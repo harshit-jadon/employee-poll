@@ -1,0 +1,50 @@
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1.5px solid lightgray;
+  border-radius: 5px;
+  padding: 10px 5px 5px 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+  font-weight: 500;
+}
+
+.link ::selection{
+  border-bottom: 5px solid #cfbdff;
+}
+
+.nav-bar-detail {
+  display: flex;
+  align-items: center;
+}
+
+.span {
+  margin-right: 20px;
+  color: black;
+  font-weight: 500;
+}
+.pfl-img {
+  border-radius: 50%;
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 5px;
+}
+
+.logoutbutton {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.link.active {
+  border-bottom: 2px solid darkblue;
+}

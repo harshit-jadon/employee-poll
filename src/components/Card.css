@@ -1,0 +1,29 @@
+.card-container {
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.authorName {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.time {
+    margin: 5px 0px 0px 0px;
+    color: gray;
+    border-bottom: 1px solid;
+    padding-bottom: 15px;
+    font-size: 14px;
+}
+
+.show-btn-div{
+    background: white;
+    margin: 10px 0px 10px 0px;
+    width: 175px;
+    border: 1px solid green;
+    border-radius: 5px;
+    color: green;
+    padding: 5px;
+}
