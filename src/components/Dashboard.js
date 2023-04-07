@@ -15,23 +15,23 @@ const Dashboard = ({ authedUser, questions, users }) => {
     <div className="main-container">
       <div className="type-questions">
         <h2>New Questions</h2>
-        <ul>
+        <div className="card-container-div">
           {questions.filter(unanswered).map((question) => (
-            <li key={question.id}>
+            <div key={question.id}>
               <Card question={question} author={users[question.author]} />
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
       <div className="type-questions">
-        <h2>Answered Questions</h2>
-        <ul>
+        <h2>Done</h2>
+        <div className="card-container-div">
           {questions.filter(answered).map((question) => (
-            <li key={question.id}>
+            <div key={question.id}>
               <Card question={question} author={users[question.author]} />
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

@@ -1,14 +1,24 @@
-.main-container{
-    text-align: center;
+.main-container {
+  text-align: center;
 }
 
-.type-questions{
-    border: 1px solid gray;
-    margin: 25px 200px 25px 200px;
+.type-questions {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 25px 200px 25px 200px;
 }
 
-.type-questions h2{
-    margin-top: 5px;
-    border-bottom: 1px solid gray;
-    padding-bottom: 10px;
+.type-questions h2 {
+  margin-top: 5px;
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+}
+
+.card-container-div {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0px 10px 0px 10px;
 }

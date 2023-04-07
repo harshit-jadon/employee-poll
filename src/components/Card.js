@@ -1,37 +1,38 @@
 import { connect } from "react-redux";
+import "./Card.css";
 import { Link } from "react-router-dom";
 
 const Card = ({ question, author }) => {
+
+  const dateconverter = (timestamp)=>{
+    const date = new Date(timestamp);
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const amOrPm = hours >= 12 ? "PM" : "AM";
+    const formattedHours = hours % 12 || 12;
+    const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const formattedDate = `${formattedHours}:${formattedMinutes}${amOrPm} | ${day}/${month}/${year}`;
+    return formattedDate;
+  }
+
   return (
-    <Link to={"questions/" + question.id}>
-      <div>
-        <div>
+    <div className="card-container">
+      {/* <div>
           <img src={author?.avatarURL} alt="Author" />
-        </div>
-        <div>
-          <div>
-            {question.author}
-          </div>
-          <p>
-            {new Date(question.timestamp).toDateString()}
-          </p>
-          <p>Show</p>
-        </div>
+        </div> */}
+      <div className="authorName">{question.author}</div>
+      <p className="time">{dateconverter(question.timestamp)}</p>
+      <div className="show-btn-div">
+      <Link className="showbutton" to={"questions/" + question.id}>
+       Show
+      </Link>
       </div>
-    </Link>
+     
+    </div>
   );
 };
 
 export default connect()(Card);
-
-/*
-<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
-  <div class="shrink-0">
-    <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
-  </div>
-  <div>
-    <div class="text-xl font-medium text-black">ChitChat</div>
-    <p class="text-slate-500">You have a new message!</p>
-  </div>
-</div>
- */
