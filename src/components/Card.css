@@ -19,22 +19,11 @@
 }
 
 .show-btn-div{
+    background: white;
     margin: 10px 0px 10px 0px;
-    width: 70%;
+    width: 175px;
     border: 1px solid green;
-    margin-left: 35px;
     border-radius: 5px;
-}
-
-/* .show-btn-div:hover{
-    background-color: green;
-} */
-
-.showbutton {
-    text-decoration: none;
     color: green;
+    padding: 5px;
 }
-
-/* .showbutton:hover{
-    color: white;
-} */

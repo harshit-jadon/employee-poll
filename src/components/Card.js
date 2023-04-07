@@ -3,8 +3,7 @@ import "./Card.css";
 import { Link } from "react-router-dom";
 
 const Card = ({ question, author }) => {
-
-  const dateconverter = (timestamp)=>{
+  const dateconverter = (timestamp) => {
     const date = new Date(timestamp);
     const hours = date.getHours();
     const minutes = date.getMinutes();
@@ -16,21 +15,15 @@ const Card = ({ question, author }) => {
     const year = date.getFullYear();
     const formattedDate = `${formattedHours}:${formattedMinutes}${amOrPm} | ${day}/${month}/${year}`;
     return formattedDate;
-  }
+  };
 
   return (
     <div className="card-container">
-      {/* <div>
-          <img src={author?.avatarURL} alt="Author" />
-        </div> */}
       <div className="authorName">{question.author}</div>
       <p className="time">{dateconverter(question.timestamp)}</p>
-      <div className="show-btn-div">
-      <Link className="showbutton" to={"questions/" + question.id}>
-       Show
+      <Link to={"questions/" + question.id} style={{ display: "inline-block" }}>
+        <button className="show-btn-div">Show</button>
       </Link>
-      </div>
-     
     </div>
   );
 };

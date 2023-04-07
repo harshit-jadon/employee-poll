@@ -15,6 +15,10 @@
   font-weight: 500;
 }
 
+.link ::selection{
+  border-bottom: 5px solid #cfbdff;
+}
+
 .nav-bar-detail {
   display: flex;
   align-items: center;

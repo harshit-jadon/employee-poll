@@ -29,8 +29,11 @@
 }
 
 .already-vote {
+  max-width: 30%;
+  min-width: 30%;
   background-color: forestgreen;
   color: white;
+  border-radius: 5px;
   padding: 5px;
 }
 .clickButton {
