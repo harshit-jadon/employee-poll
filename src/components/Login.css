@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.head-container h1{
+    margin-top: 8px;
+}
+
 .head-container img{
     max-width: 60%;
     max-height: 250px;
@@ -28,4 +32,19 @@
 }
 .submit-btn{
     text-align: center;
+    margin-bottom: 10px;
+}
+
+.submit{
+    background-color: #87CEEB;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px 10px 20px;
+}
+
+.submit:hover{
+    background-color: darkblue;
 }
