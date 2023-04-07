@@ -1,0 +1,14 @@
+.main-container{
+    text-align: center;
+}
+
+.type-questions{
+    border: 1px solid gray;
+    margin: 25px 200px 25px 200px;
+}
+
+.type-questions h2{
+    margin-top: 5px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}

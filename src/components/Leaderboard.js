@@ -1,13 +1,15 @@
 import { connect } from "react-redux";
+import "./Leaderboard.css";
+import LoginPageSvg from "../images/employee1.png";
 
 const Leaderboard = ({ users }) => {
   return (
-    <div>
-      <table >
+    <div className="table-div">
+      <table>
         <thead>
           <tr>
             <th>
-              User
+              Users
             </th>
             <th>
               Answered
@@ -21,9 +23,13 @@ const Leaderboard = ({ users }) => {
           {users.map((user) => (
             <tr key={user.id}>
               <td>
-                <span>{user.name}</span>
+                <div className="employee-poll-details">
+                  <img className="img-details" src={LoginPageSvg} alt="img"></img>
+                  <div><span>{user.name}</span>
                 <br />
-                {user.id}
+                {user.id}</div>
+                </div>
+                
               </td>
               <td>
                 {Object.keys(user.answers).length}

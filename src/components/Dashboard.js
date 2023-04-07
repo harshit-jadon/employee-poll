@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import "./Dashboard.css";
 import Card from "./Card";
 
 const Dashboard = ({ authedUser, questions, users }) => {
@@ -11,28 +12,27 @@ const Dashboard = ({ authedUser, questions, users }) => {
     question.optionTwo.votes.includes(authedUser.id);
 
   return (
-    <div>
-      <h1 data-testid="heading">
-        Dashboard
-      </h1>
-
-      <h2>New Questions</h2>
-      <ul>
-        {questions.filter(unanswered).map((question) => (
-          <li key={question.id}>
-            <Card question={question} author={users[question.author]} />
-          </li>
-        ))}
-      </ul>
-
-      <h2>Answered Questions</h2>
-      <ul>
-        {questions.filter(answered).map((question) => (
-          <li key={question.id}>
-            <Card question={question} author={users[question.author]} />
-          </li>
-        ))}
-      </ul>
+    <div className="main-container">
+      <div className="type-questions">
+        <h2>New Questions</h2>
+        <ul>
+          {questions.filter(unanswered).map((question) => (
+            <li key={question.id}>
+              <Card question={question} author={users[question.author]} />
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="type-questions">
+        <h2>Answered Questions</h2>
+        <ul>
+          {questions.filter(answered).map((question) => (
+            <li key={question.id}>
+              <Card question={question} author={users[question.author]} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
