@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { handleLogout } from "../actions/authedUser";
 import "./Nav.css";
@@ -9,19 +9,26 @@ const Nav = ({ dispatch, authedUserId, authedUserAvatar }) => {
     dispatch(handleLogout());
   };
 
-
   return (
     <nav className="nav-bar">
       <div className="nav-bar-link">
-        <Link className="link" to="/">
+        <NavLink
+          className="link"
+          to="/"
+          activeclassName="active"
+        >
           Home
-        </Link>
-        <Link className="link" to="/leaderboard">
+        </NavLink>
+        <NavLink
+          className="link"
+          to="/leaderboard"
+          activeclassName="active"
+        >
           Leaderboard
-        </Link>
-        <Link className="link" to="/new">
+        </NavLink>
+        <NavLink className="link" to="/new" activeclassName="active">
           New
-        </Link>
+        </NavLink>
       </div>
       <div className="nav-bar-detail">
         <div className="nav-bar-detail">
