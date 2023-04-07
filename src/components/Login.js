@@ -28,8 +28,8 @@ const Login = () => {
       <img src={LoginPageSvg} alt="login-page-svg"></img>
       <h1>Log In</h1>
       <form onSubmit={handleSubmit} className="form-div">
-        <div>
-          <label htmlFor="username">User</label>
+        <div className="div-container">
+          <label className="label-box" htmlFor="username">User</label>
           <div>
             <input
               value={username}
@@ -39,13 +39,14 @@ const Login = () => {
               id="username"
               data-testid="username"
               className="input-box"
+              placeholder="User"
             />
           </div>
         </div>
-        <div>
+        <div className="div-container">
           <label
             htmlFor="password"
-            className="block text-sm font-medium text-slate-700"
+            className="label-box"
           >
             Password
           </label>
@@ -58,13 +59,14 @@ const Login = () => {
               id="password"
               data-testid="password"
               className="input-box"
+              placeholder="Password"
             />
           </div>
         </div>
-        <div className="mt-6 text-right">
+        <div className="submit-btn">
           <button type="submit" data-testid="submit">
             {" "}
-            Login
+            Submit
           </button>
         </div>
       </form>

@@ -11,9 +11,21 @@
 
 .form-div{
     width: 100%;
+    text-align: center;
+}
+.div-container{
+    margin-bottom: 10px;
+}
+
+.label-box{
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .input-box{
     width: 70%;
 
+}
+.submit-btn{
+    text-align: center;
 }
