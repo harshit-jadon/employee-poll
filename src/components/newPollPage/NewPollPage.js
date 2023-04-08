@@ -1,35 +1,27 @@
-import { connect } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import "./NewPollPage.css";
 import { useState } from "react";
-import "./NewPoll.css";
-import { handleAddQuestion } from "../actions/questions";
+import { useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
+import { handleAddQuestion } from "../../actions/questions";
 
-const NewPoll = ({ dispatch }) => {
+const NewPollPage = ({ handleAddQuestion }) => {
+  
+  const [optOne, setOptOne] = useState("");
+  const [optTwo, setOptTwo] = useState("");
+
   const navigate = useNavigate();
-  const [firstOption, setFirstOption] = useState("");
-  const [secondOption, setSecondOption] = useState("");
 
-  const handleFirstOptionChange = (e) => {
-    const value = e.target.value;
-    setFirstOption(value);
-  };
-
-  const handleSecondOptionChange = (e) => {
-    const value = e.target.value;
-    setSecondOption(value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(handleAddQuestion(firstOption, secondOption));
+  const submitNewPoll = (e) => {
+    handleAddQuestion(optOne, optTwo);
     navigate("/");
+    e.preventDefault();
   };
 
   return (
     <div className="poll-div">
       <h3>Would You Rather</h3>
       <h6>Create Your Own Poll</h6>
-      <form className="form-div" onSubmit={handleSubmit}>
+      <form className="form-div" onSubmit={submitNewPoll}>
         <div className="label-input-dev">
           <label
             className="label"
@@ -40,12 +32,11 @@ const NewPoll = ({ dispatch }) => {
           </label>
           <div>
             <input
-              value={firstOption}
-              onChange={handleFirstOptionChange}
               type="text"
-              name="firstOption"
               id="firstOption"
               data-testid="firstOption"
+              value={optOne}
+              onChange={(e) => setOptOne(e.target.value)}
               className="input"
               placeholder="Option One"
             />
@@ -58,12 +49,11 @@ const NewPoll = ({ dispatch }) => {
           </label>
           <div>
             <input
-              value={secondOption}
-              onChange={handleSecondOptionChange}
               type="text"
-              name="secondOption"
               id="secondOption"
               data-testid="secondOption"
+              value={optTwo}
+              onChange={(e) => setOptTwo(e.target.value)}
               className="input"
               placeholder="Option Two"
             />
@@ -71,7 +61,11 @@ const NewPoll = ({ dispatch }) => {
         </div>
 
         <div className="submit-btn-poll">
-          <button className="submit-poll" type="submit" data-testid="submit-poll">
+          <button
+            className="submit-poll"
+            type="submit"
+            data-testid="submit-poll"
+          >
             Submit
           </button>
         </div>
@@ -80,4 +74,8 @@ const NewPoll = ({ dispatch }) => {
   );
 };
 
-export default connect()(NewPoll);
+const mapDispatchToProps = {
+  handleAddQuestion,
+};
+
+export default connect(null, mapDispatchToProps)(NewPollPage);

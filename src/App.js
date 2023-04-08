@@ -5,17 +5,14 @@ import { connect } from "react-redux";
 import LoginPage from "../src/components/loginPage/LoginPage";
 import PrivateRoute from "../src/components/privateRoute/PrivateRoute";
 import EmployeeDashboard from "../src/components/employeeDashboard/EmployeeDashboard";
-
-import NavBar from "../src/components/navBar/Nav";
-import NewPoll from "./components/NewPoll";
-import PollPage from "./components/PollPage";
-import Leaderboard from "./components/Leaderboard";
+import NavBar from "../src/components/navBar/NavBar";
+import NewPollPage from "../src/components/newPollPage/NewPollPage";
+import Leaderboard from "./components/leaderBoard/Leaderboard";
+import PollPage from "../src/components/pollPage/PollPage";
 import Error404 from "./components/404";
-
 import { handleInitialData } from "./actions/shared";
 
 function App({ dispatch, login }) {
-  
   useEffect(() => {
     dispatch(handleInitialData());
   });
@@ -30,6 +27,15 @@ function App({ dispatch, login }) {
           element={
             <PrivateRoute>
               <EmployeeDashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/new"
+          exact
+          element={
+            <PrivateRoute>
+              <NewPollPage />
             </PrivateRoute>
           }
         />
@@ -50,15 +56,7 @@ function App({ dispatch, login }) {
             </PrivateRoute>
           }
         />
-        <Route
-          path="/new"
-          exact
-          element={
-            <PrivateRoute>
-              <NewPoll />
-            </PrivateRoute>
-          }
-        />
+
         <Route path="/404" exact element={<Error404 />} />
       </Routes>
     </div>
