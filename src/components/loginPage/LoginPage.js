@@ -11,10 +11,10 @@
     const { search } = useLocation();
 
     const handleSubmit = (e) => {
-      e.preventDefault();
-      dispatch(handleLogin(username, password));
       setUsername("");
       setPassword("");
+      dispatch(handleLogin(username, password));
+      e.preventDefault();
     };
 
     if (login) {
