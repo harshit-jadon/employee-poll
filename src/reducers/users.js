@@ -1,17 +1,17 @@
 import {
-  ADD_ANSWER_USER,
-  ADD_QUESTION_USER,
-  RECEIVE_USERS,
+  ADD_ANSWER_EMPL,
+  ADD_QUESTION_EMPL,
+  RECEIVE_EMPL,
 } from "../actions/users";
 
 export default function users(state = {}, action) {
   switch (action.type) {
-    case RECEIVE_USERS:
+    case RECEIVE_EMPL:
       return {
         ...state,
         ...action.users,
       };
-    case ADD_ANSWER_USER:
+    case ADD_ANSWER_EMPL:
       return {
         ...state,
         [action.authedUser]: {
@@ -22,7 +22,7 @@ export default function users(state = {}, action) {
           },
         },
       };
-    case ADD_QUESTION_USER:
+    case ADD_QUESTION_EMPL:
       return {
         ...state,
         [action.author]: {

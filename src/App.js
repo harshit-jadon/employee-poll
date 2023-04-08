@@ -1,32 +1,42 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import Nav from "./components/Nav";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import NewPoll from "./components/NewPoll";
-import PollPage from "./components/PollPage";
 import { connect } from "react-redux";
-import Login from "./components/Login";
-import { handleInitialData } from "./actions/shared";
-import Leaderboard from "./components/Leaderboard";
+import LoginPage from "../src/components/loginPage/LoginPage";
+import PrivateRoute from "../src/components/privateRoute/PrivateRoute";
+import EmployeeDashboard from "../src/components/employeeDashboard/EmployeeDashboard";
+import NavBar from "../src/components/navBar/NavBar";
+import NewPollPage from "../src/components/newPollPage/NewPollPage";
+import Leaderboard from "./components/leaderBoard/Leaderboard";
+import PollPage from "../src/components/pollPage/PollPage";
 import Error404 from "./components/404";
-import PrivateRoute from "./components/PrivateRoute";
+import { handleDataInitial } from "./actions/shared";
 
-function App({ dispatch, loggedIn }) {
+function App({ dispatch, login }) {
+
   useEffect(() => {
-    dispatch(handleInitialData());
+    dispatch(handleDataInitial());
   });
 
   return (
     <div>
-      {loggedIn && <Nav />}
+      {login && <NavBar />}
       <Routes>
-        <Route path="/login" exact element={<Login />} />
+        <Route path="/login" exact element={<LoginPage />} />
         <Route
           path="/"
           element={
             <PrivateRoute>
-              <Dashboard />
+              <EmployeeDashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/new"
+          exact
+          element={
+            <PrivateRoute>
+              <NewPollPage />
             </PrivateRoute>
           }
         />
@@ -47,15 +57,7 @@ function App({ dispatch, loggedIn }) {
             </PrivateRoute>
           }
         />
-        <Route
-          path="/new"
-          exact
-          element={
-            <PrivateRoute>
-              <NewPoll />
-            </PrivateRoute>
-          }
-        />
+
         <Route path="/404" exact element={<Error404 />} />
       </Routes>
     </div>
@@ -63,7 +65,7 @@ function App({ dispatch, loggedIn }) {
 }
 
 const mapStateToProps = ({ authedUser }) => ({
-  loggedIn: !!authedUser,
+  login: authedUser,
 });
 
 export default connect(mapStateToProps)(App);

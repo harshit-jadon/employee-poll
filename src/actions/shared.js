@@ -1,11 +1,11 @@
-import { receiveUsers } from "./users";
+import { receiveEmpl } from "./users";
 import { receiveQuestions } from "./questions";
 import { getInitialData } from "../util/api";
 
-export function handleInitialData() {
+export function handleDataInitial() {
   return (dispatch) => {
     return getInitialData().then(({ users, questions }) => {
-      dispatch(receiveUsers(users));
+      dispatch(receiveEmpl(users));
       dispatch(receiveQuestions(questions));
     });
   };
