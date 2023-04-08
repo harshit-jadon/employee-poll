@@ -23,6 +23,8 @@
       return <Navigate to={redirectUrl || "/"} />;
     }
 
+    const isSubmitDisabled = (username === "" || password === "");
+
     return (
       <div className="head-container" >
         <h1 data-testid="login-header" className="header">Employee Polls</h1>
@@ -62,7 +64,7 @@
             </div>
           </div>
           <div className="submit-btn">
-            <button type="submit" data-testid="submit-button" className="submit">
+            <button type="submit" data-testid="submit-button" className={`${isSubmitDisabled ? "disable-submit" :"submit"}`}>
               Login
             </button>
           </div>
