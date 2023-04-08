@@ -3,7 +3,7 @@ import {Provider} from "react-redux";
 import {store} from "../store";
 import {BrowserRouter} from "react-router-dom";
 import React from "react";
-import Login from "./Login";
+import Login from "./LoginPage";
 import {handleInitialData} from "../actions/shared";
 
 describe("Login", () => {

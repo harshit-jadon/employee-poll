@@ -1,12 +1,13 @@
+import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { handleLogout } from "../actions/authedUser";
-import "./Nav.css";
+import { handleLogout } from "../../actions/authedUser";
 
-const Nav = ({ dispatch, authedUserId, authedUserAvatar }) => {
-  const logout = (e) => {
-    e.preventDefault();
+const NavBar = ({ employeeId, employeeAvatar, dispatch }) => {
+  
+  const logoutEmployee = (e) => {
     dispatch(handleLogout());
+    e.preventDefault();
   };
 
   return (
@@ -32,12 +33,12 @@ const Nav = ({ dispatch, authedUserId, authedUserAvatar }) => {
       </div>
       <div className="nav-bar-detail">
         <div className="nav-bar-detail">
-          <img className="pfl-img" src={authedUserAvatar} alt="userImage"></img>
+          <img className="pfl-img" src={employeeAvatar} alt="userImage"></img>
           <span className="span" data-testid="user-information">
-            {authedUserId}
+            {employeeId}
           </span>
         </div>
-        <button className="logoutbutton" onClick={logout}>
+        <button className="logoutbutton" onClick={logoutEmployee}>
           Logout
         </button>
       </div>
@@ -45,9 +46,9 @@ const Nav = ({ dispatch, authedUserId, authedUserAvatar }) => {
   );
 };
 
-const mapStateToProps = ({ authedUser }) => ({
-  authedUserId: authedUser.id,
-  authedUserAvatar: authedUser.avatarURL,
+const mapStateToProps = (state) => ({
+  employeeId: state.authedUser.id,
+  employeeAvatar: state.authedUser.avatarURL,
 });
 
-export default connect(mapStateToProps)(Nav);
+export default connect(mapStateToProps)(NavBar);

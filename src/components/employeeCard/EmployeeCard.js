@@ -1,8 +1,8 @@
+import "./EmployeeCard.css";
 import { connect } from "react-redux";
-import "./Card.css";
 import { Link } from "react-router-dom";
 
-const Card = ({ question, author }) => {
+const EmployeeCard = ({ question, author }) => {
   const dateconverter = (timestamp) => {
     const date = new Date(timestamp);
     const hours = date.getHours();
@@ -28,4 +28,4 @@ const Card = ({ question, author }) => {
   );
 };
 
-export default connect()(Card);
+export default connect()(EmployeeCard);
