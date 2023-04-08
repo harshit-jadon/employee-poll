@@ -2,6 +2,35 @@
   text-align: center;
 }
 
+.toggle-buttons{
+  height: 100px;
+}
+
+.selectedButton{
+  background: darkblue;
+  color: white;
+}
+
+.unanswered-button{
+  margin-top: 20px;
+  margin-right: 2px;
+  border: none;
+  width: 20%;
+  height: 50%;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.answered-button{
+  margin-top: 20px;
+  margin-left: 2px;
+  border: none;
+  width: 20%;
+  height: 50%;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
 .type-questions {
   border: 1px solid gray;
   border-radius: 5px;
