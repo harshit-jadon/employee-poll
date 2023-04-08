@@ -29,7 +29,7 @@ Object {
           <a
             activeclassname="active"
             class="link"
-            href="/new"
+            href="/add"
           >
             New
           </a>
@@ -83,7 +83,7 @@ Object {
         <a
           activeclassname="active"
           class="link"
-          href="/new"
+          href="/add"
         >
           New
         </a>

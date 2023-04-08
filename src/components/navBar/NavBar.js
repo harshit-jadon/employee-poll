@@ -27,7 +27,7 @@ const NavBar = ({ employeeId, employeeAvatar, dispatch }) => {
         >
           Leaderboard
         </NavLink>
-        <NavLink className="link" to="/new" activeclassName="active">
+        <NavLink className="link" to="/add" activeclassName="active">
           New
         </NavLink>
       </div>

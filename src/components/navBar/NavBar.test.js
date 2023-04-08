@@ -54,9 +54,9 @@ describe("NavBar component", () => {
         </BrowserRouter>
       </Provider>
     );
-    const newLink = navBarComp.getByText(/New/i);
+    const newLink = navBarComp.getByText(/add/i);
     expect(newLink).toBeInTheDocument();
-    expect(newLink).toHaveAttribute("href", "/new");
+    expect(newLink).toHaveAttribute("href", "/add");
   });
 
   test("should display username of logged in user", () => {
