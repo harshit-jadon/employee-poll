@@ -55,3 +55,16 @@
     border: none;
     padding: 5px 10px 5px 10px;
 }
+
+.disable-submit{
+  pointer-events: none;
+  opacity: .4;
+  background-color: grey;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px 5px 10px;
+
+}

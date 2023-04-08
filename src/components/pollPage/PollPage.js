@@ -1,46 +1,44 @@
-import React, { useCallback } from "react";
+import React from "react";
 import "./PollPage.css";
 import { connect, useDispatch } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { addAnswerFnc } from "../../actions/questions";
 
 const PollPage = (props) => {
   let { id } = useParams();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const authedUser = props.authedUser;
   const questions = props.questions;
   const users = props.users;
+
   const questionss = Object.values(questions).find(
     (question) => question.id === id
   );
-  const userss = Object.values(users).find(
-    (user) => user.id === questionss.author
-  );
-  // const questionss = questions[id];
-  // const userss = users[questionss?.author];
 
   const voteOptionOne =
     questionss?.optionOne?.votes.indexOf(authedUser?.id) !== -1;
+
   const voteOptionTwo =
     questionss?.optionTwo?.votes.indexOf(authedUser?.id) !== -1;
+    
   const hasVoted = voteOptionOne || voteOptionTwo;
 
-  const navigatetoHome = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
 
   const optionOneSelected = (e) => {
     dispatch(addAnswerFnc(questionss?.id, "optionOne"));
-    navigatetoHome();
     e.preventDefault();
   };
 
   const optionTwoSelected = (e) => {
     dispatch(addAnswerFnc(questionss?.id, "optionTwo"));
-    navigatetoHome();
     e.preventDefault();
   };
+
+  if(!questionss) return <Navigate to='/404'/>
+
+  const userss = Object.values(users).find(
+    (user) => user.id === questionss.author
+  );
 
   const percentageCalculate = (option, questions) => {
     const { optionOne, optionTwo } = questions;

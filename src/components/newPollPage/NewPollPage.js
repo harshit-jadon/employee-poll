@@ -17,6 +17,8 @@ const NewPollPage = ({ addQuestionFnc }) => {
     e.preventDefault();
   };
 
+  const isSubmitDisabled = (optOne === "" || optTwo === "");
+
   return (
     <div className="poll-div" >
       <h3  data-testid="poll-div-comp">Would You Rather</h3>
@@ -63,7 +65,7 @@ const NewPollPage = ({ addQuestionFnc }) => {
         <div className="submit-btn-poll">
           <button
             data-testid="submit-button"
-            className="submit-poll"
+            className={`${isSubmitDisabled ? "disable-submit" : "submit-poll"}`}
             type="submit"
           >
             Submit
