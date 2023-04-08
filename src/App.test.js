@@ -1,47 +1,50 @@
 import React from 'react';
-import {render} from '@testing-library/react';
-import App from './App';
 import {Provider} from "react-redux";
-import {store} from "./store";
 import {BrowserRouter} from "react-router-dom";
+import {render} from '@testing-library/react';
+import {store} from "./store";
+import userEvent from '@testing-library/user-event';
 import {setAuthedUser} from "./actions/authedUser";
+import App from './App';
 
-describe("App", () => {
-    it("should render the component", () => {
-        const component = render(
+describe("App.js component", () => {
+
+    it("should render the component app.js", () => {
+        const Appcomponent = render(
             <Provider store={store}>
                 <BrowserRouter>
                     <App/>
                 </BrowserRouter>
             </Provider>
         );
-        expect(component).toBeDefined();
-        expect(component).toMatchSnapshot();
+        expect(Appcomponent).toBeDefined();
+        expect(Appcomponent).toMatchSnapshot();
     });
 
-    it("should show Login page when not logged in", () => {
-        const component = render(
+    it("should render the loginpage component", () => {
+        const loginPageComponent = render(
             <Provider store={store}>
                 <BrowserRouter>
                     <App/>
                 </BrowserRouter>
             </Provider>
         );
-        const heading = component.getByTestId("login-heading");
-        expect(heading).toBeInTheDocument();
+        const loginpageComp = loginPageComponent.getByTestId("login-header");
+        expect(loginpageComp).toBeInTheDocument();
     });
 
     it("should show Dashboard page when logged in", () => {
         store.dispatch(setAuthedUser({id: "", password: ""}));
-        const component = render(
+        const dashboardComp = render(
             <Provider store={store}>
                 <BrowserRouter>
                     <App/>
                 </BrowserRouter>
             </Provider>
         );
-
-        const heading = component.getByTestId("heading");
-        expect(heading).toBeInTheDocument();
+        const employeeDashboard = dashboardComp.getByTestId("employee-dashboard");
+        expect(employeeDashboard).toBeInTheDocument();
     });
+
+
 });

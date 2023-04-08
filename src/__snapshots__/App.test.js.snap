@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should render the component 1`] = `
+exports[`App.js component should render the component app.js 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -9,16 +9,17 @@ Object {
         <div
           class="head-container"
         >
-          <h1>
-             Employee Polls
+          <h1
+            class="header"
+            data-testid="login-header"
+          >
+            Employee Polls
           </h1>
           <img
             alt="login-page-svg"
             src="employee1.png"
           />
-          <h1
-            data-testid="login-heading"
-          >
+          <h1>
             Log In
           </h1>
           <form
@@ -29,19 +30,17 @@ Object {
             >
               <label
                 class="label-box"
-                for="username"
+                for="user"
               >
                 User
               </label>
               <div>
                 <input
                   class="input-box"
-                  data-testid="username"
-                  id="username"
-                  name="username"
+                  data-testid="username-input"
                   placeholder="User"
                   type="text"
-                  value="sarahedo"
+                  value=""
                 />
               </div>
             </div>
@@ -59,12 +58,10 @@ Object {
               >
                 <input
                   class="input-box"
-                  data-testid="password"
-                  id="password"
-                  name="password"
+                  data-testid="password-input"
                   placeholder="Password"
                   type="password"
-                  value="password123"
+                  value=""
                 />
               </div>
             </div>
@@ -73,7 +70,7 @@ Object {
             >
               <button
                 class="submit"
-                data-testid="submit"
+                data-testid="submit-button"
                 type="submit"
               >
                 Login
@@ -89,16 +86,17 @@ Object {
       <div
         class="head-container"
       >
-        <h1>
-           Employee Polls
+        <h1
+          class="header"
+          data-testid="login-header"
+        >
+          Employee Polls
         </h1>
         <img
           alt="login-page-svg"
           src="employee1.png"
         />
-        <h1
-          data-testid="login-heading"
-        >
+        <h1>
           Log In
         </h1>
         <form
@@ -109,19 +107,17 @@ Object {
           >
             <label
               class="label-box"
-              for="username"
+              for="user"
             >
               User
             </label>
             <div>
               <input
                 class="input-box"
-                data-testid="username"
-                id="username"
-                name="username"
+                data-testid="username-input"
                 placeholder="User"
                 type="text"
-                value="sarahedo"
+                value=""
               />
             </div>
           </div>
@@ -139,12 +135,10 @@ Object {
             >
               <input
                 class="input-box"
-                data-testid="password"
-                id="password"
-                name="password"
+                data-testid="password-input"
                 placeholder="Password"
                 type="password"
-                value="password123"
+                value=""
               />
             </div>
           </div>
@@ -153,7 +147,7 @@ Object {
           >
             <button
               class="submit"
-              data-testid="submit"
+              data-testid="submit-button"
               type="submit"
             >
               Login

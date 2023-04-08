@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav should render the component 1`] = `
+exports[`NavBar component renders NavBar component without errors 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -12,18 +12,22 @@ Object {
           class="nav-bar-link"
         >
           <a
-            class="link"
+            activeclassname="active"
+            aria-current="page"
+            class="link active"
             href="/"
           >
             Home
           </a>
           <a
+            activeclassname="active"
             class="link"
             href="/leaderboard"
           >
             Leaderboard
           </a>
           <a
+            activeclassname="active"
             class="link"
             href="/new"
           >
@@ -37,15 +41,13 @@ Object {
             class="nav-bar-detail"
           >
             <img
-              alt="userImage"
+              alt="emloyeeAvatar"
               class="pfl-img"
             />
             <span
               class="span"
-              data-testid="user-information"
-            >
-              sarahedo
-            </span>
+              data-testid="employee-id"
+            />
           </div>
           <button
             class="logoutbutton"
@@ -64,18 +66,22 @@ Object {
         class="nav-bar-link"
       >
         <a
-          class="link"
+          activeclassname="active"
+          aria-current="page"
+          class="link active"
           href="/"
         >
           Home
         </a>
         <a
+          activeclassname="active"
           class="link"
           href="/leaderboard"
         >
           Leaderboard
         </a>
         <a
+          activeclassname="active"
           class="link"
           href="/new"
         >
@@ -89,15 +95,13 @@ Object {
           class="nav-bar-detail"
         >
           <img
-            alt="userImage"
+            alt="emloyeeAvatar"
             class="pfl-img"
           />
           <span
             class="span"
-            data-testid="user-information"
-          >
-            sarahedo
-          </span>
+            data-testid="employee-id"
+          />
         </div>
         <button
           class="logoutbutton"

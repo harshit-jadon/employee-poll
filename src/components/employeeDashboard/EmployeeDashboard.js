@@ -13,7 +13,7 @@ const EmployeeDashboard = ({ employeeUser, questions, users }) => {
     data.optionTwo.votes.includes(employeeUser.id);
 
   return (
-    <div className="main-container" data-testid="heading">
+    <div className="main-container" data-testid="employee-dashboard">
       <div className="type-questions">
         <h2>New Questions</h2>
         <div className="card-container-div">

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NewPoll should render the component 1`] = `
+exports[`NewPoll Render the New PollPage component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -8,7 +8,9 @@ Object {
       <div
         class="poll-div"
       >
-        <h3>
+        <h3
+          data-testid="poll-div-comp"
+        >
           Would You Rather
         </h3>
         <h6>
@@ -22,7 +24,7 @@ Object {
           >
             <label
               class="label"
-              data-testid="firstOptionLabel"
+              data-testid="label-first-option"
               for="firstOption"
             >
               First Option
@@ -30,9 +32,8 @@ Object {
             <div>
               <input
                 class="input"
-                data-testid="firstOption"
+                data-testid="input-first-option"
                 id="firstOption"
-                name="firstOption"
                 placeholder="Option One"
                 type="text"
                 value=""
@@ -43,7 +44,7 @@ Object {
             class="label-input-dev"
           >
             <label
-              data-testid="secondOptionLabel"
+              data-testid="label-second-option"
               for="secondOption"
             >
               Second Option
@@ -51,9 +52,8 @@ Object {
             <div>
               <input
                 class="input"
-                data-testid="secondOption"
+                data-testid="input-second-option"
                 id="secondOption"
-                name="secondOption"
                 placeholder="Option Two"
                 type="text"
                 value=""
@@ -65,7 +65,7 @@ Object {
           >
             <button
               class="submit-poll"
-              data-testid="submit-poll"
+              data-testid="submit-button"
               type="submit"
             >
               Submit
@@ -79,7 +79,9 @@ Object {
     <div
       class="poll-div"
     >
-      <h3>
+      <h3
+        data-testid="poll-div-comp"
+      >
         Would You Rather
       </h3>
       <h6>
@@ -93,7 +95,7 @@ Object {
         >
           <label
             class="label"
-            data-testid="firstOptionLabel"
+            data-testid="label-first-option"
             for="firstOption"
           >
             First Option
@@ -101,9 +103,8 @@ Object {
           <div>
             <input
               class="input"
-              data-testid="firstOption"
+              data-testid="input-first-option"
               id="firstOption"
-              name="firstOption"
               placeholder="Option One"
               type="text"
               value=""
@@ -114,7 +115,7 @@ Object {
           class="label-input-dev"
         >
           <label
-            data-testid="secondOptionLabel"
+            data-testid="label-second-option"
             for="secondOption"
           >
             Second Option
@@ -122,9 +123,8 @@ Object {
           <div>
             <input
               class="input"
-              data-testid="secondOption"
+              data-testid="input-second-option"
               id="secondOption"
-              name="secondOption"
               placeholder="Option Two"
               type="text"
               value=""
@@ -136,7 +136,7 @@ Object {
         >
           <button
             class="submit-poll"
-            data-testid="submit-poll"
+            data-testid="submit-button"
             type="submit"
           >
             Submit

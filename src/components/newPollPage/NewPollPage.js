@@ -18,23 +18,23 @@ const NewPollPage = ({ handleAddQuestion }) => {
   };
 
   return (
-    <div className="poll-div">
-      <h3>Would You Rather</h3>
+    <div className="poll-div" >
+      <h3  data-testid="poll-div-comp">Would You Rather</h3>
       <h6>Create Your Own Poll</h6>
       <form className="form-div" onSubmit={submitNewPoll}>
         <div className="label-input-dev">
           <label
+           data-testid="label-first-option"
             className="label"
             htmlFor="firstOption"
-            data-testid="firstOptionLabel"
           >
             First Option
           </label>
           <div>
             <input
+            data-testid="input-first-option"
               type="text"
               id="firstOption"
-              data-testid="firstOption"
               value={optOne}
               onChange={(e) => setOptOne(e.target.value)}
               className="input"
@@ -44,14 +44,14 @@ const NewPollPage = ({ handleAddQuestion }) => {
         </div>
 
         <div className="label-input-dev">
-          <label htmlFor="secondOption" data-testid="secondOptionLabel">
+          <label htmlFor="secondOption" data-testid="label-second-option">
             Second Option
           </label>
           <div>
             <input
               type="text"
               id="secondOption"
-              data-testid="secondOption"
+              data-testid="input-second-option"
               value={optTwo}
               onChange={(e) => setOptTwo(e.target.value)}
               className="input"
@@ -62,9 +62,9 @@ const NewPollPage = ({ handleAddQuestion }) => {
 
         <div className="submit-btn-poll">
           <button
+            data-testid="submit-button"
             className="submit-poll"
             type="submit"
-            data-testid="submit-poll"
           >
             Submit
           </button>

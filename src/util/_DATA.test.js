@@ -1,6 +1,7 @@
 const {_saveQuestionAnswer} = require("./_DATA");
 describe("_saveQuestionAnswer", () => {
-    it("should return true for correct parameters", async () => {
+
+    it("should return true for correct details", async () => {
         const response = await _saveQuestionAnswer({
             authedUser: "sarahedo",
             qid: "8xf0y6ziyjabvozdd253nd",
@@ -10,7 +11,19 @@ describe("_saveQuestionAnswer", () => {
         expect(response).toBeTruthy();
     });
 
-    it("should return error for false parameters", async () => {
+    it("generateUID generates unique IDs", async() => {
+        const response = await _saveQuestionAnswer({
+            authedUser: "sarahedo",
+            qid: "8xf0y6ziyjabvozdd253nd",
+            answer: "optionOne"
+        });
+        console.log('response >>>',response)
+          expect(response).toBe(true);
+          
+        })
+ 
+
+    it("should return error for false details", async () => {
         const response = await _saveQuestionAnswer({
             authedUser: "sarahedo",
             qid: undefined,

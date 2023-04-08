@@ -11,7 +11,7 @@ const NavBar = ({ employeeId, employeeAvatar, dispatch }) => {
   };
 
   return (
-    <nav className="nav-bar">
+    <nav className="nav-bar" >
       <div className="nav-bar-link">
         <NavLink
           className="link"
@@ -33,8 +33,8 @@ const NavBar = ({ employeeId, employeeAvatar, dispatch }) => {
       </div>
       <div className="nav-bar-detail">
         <div className="nav-bar-detail">
-          <img className="pfl-img" src={employeeAvatar} alt="userImage"></img>
-          <span className="span" data-testid="user-information">
+          <img className="pfl-img" src={employeeAvatar} alt="emloyeeAvatar"></img>
+          <span className="span" data-testid="employee-id">
             {employeeId}
           </span>
         </div>
@@ -47,8 +47,8 @@ const NavBar = ({ employeeId, employeeAvatar, dispatch }) => {
 };
 
 const mapStateToProps = (state) => ({
-  employeeId: state.authedUser.id,
-  employeeAvatar: state.authedUser.avatarURL,
+  employeeId: state?.authedUser?.id,
+  employeeAvatar: state?.authedUser?.avatarURL,
 });
 
 export default connect(mapStateToProps)(NavBar);

@@ -6,8 +6,8 @@
   import { handleLogin } from "../../actions/authedUser";
 
   const LoginPage = ({login, dispatch }) => {
-    const [username, setUsername] = useState("sarahedo");
-    const [password, setPassword] = useState("password123");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const { search } = useLocation();
 
     const handleSubmit = (e) => {
@@ -24,21 +24,22 @@
     }
 
     return (
-      <div className="head-container">
-        <h1> Employee Polls</h1>
+      <div className="head-container" >
+        <h1 data-testid="login-header" className="header">Employee Polls</h1>
         <img src={LoginPageSvg} alt="login-page-svg" />
-        <h1 data-testid="login-heading">Log In</h1>
+        <h1>Log In</h1>
         <form onSubmit={handleSubmit} className="form-div">
           <div className="div-container">
-            <label htmlFor="username" className="label-box">
+            <label htmlFor="user" className="label-box">
               User
             </label>
             <div>
               <input
+               data-testid="username-input"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 type="text"
-                data-testid="username"
+               
                 className="input-box"
                 placeholder="User"
               />
@@ -50,17 +51,18 @@
             </label>
             <div className="mt-1">
               <input
+                data-testid="password-input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
-                data-testid="password"
+              
                 className="input-box"
                 placeholder="Password"
               />
             </div>
           </div>
           <div className="submit-btn">
-            <button type="submit" data-testid="submit" className="submit">
+            <button type="submit" data-testid="submit-button" className="submit">
               Login
             </button>
           </div>
