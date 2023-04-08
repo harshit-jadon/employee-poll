@@ -4,7 +4,7 @@ import {BrowserRouter} from "react-router-dom";
 import {render} from '@testing-library/react';
 import {store} from "./store";
 import userEvent from '@testing-library/user-event';
-import {setAuthedUser} from "./actions/authedUser";
+import {employeeUser} from "./actions/authedUser";
 import App from './App';
 
 describe("App.js component", () => {
@@ -34,7 +34,7 @@ describe("App.js component", () => {
     });
 
     it("should show Dashboard page when logged in", () => {
-        store.dispatch(setAuthedUser({id: "", password: ""}));
+        store.dispatch(employeeUser({id: "", password: ""}));
         const dashboardComp = render(
             <Provider store={store}>
                 <BrowserRouter>

@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import "./PollPage.css";
 import { connect, useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { handleAddAnswer } from "../../actions/questions";
+import { addAnswerFnc } from "../../actions/questions";
 
 const PollPage = (props) => {
   let { id } = useParams();
@@ -31,13 +31,13 @@ const PollPage = (props) => {
   }, [navigate]);
 
   const optionOneSelected = (e) => {
-    dispatch(handleAddAnswer(questionss?.id, "optionOne"));
+    dispatch(addAnswerFnc(questionss?.id, "optionOne"));
     navigatetoHome();
     e.preventDefault();
   };
 
   const optionTwoSelected = (e) => {
-    dispatch(handleAddAnswer(questionss?.id, "optionTwo"));
+    dispatch(addAnswerFnc(questionss?.id, "optionTwo"));
     navigatetoHome();
     e.preventDefault();
   };

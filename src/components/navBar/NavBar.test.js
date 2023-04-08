@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { render, fireEvent, waitFor } from "@testing-library/react";
-import { setAuthedUser } from "../../actions/authedUser";
+import { employeeUser } from "../../actions/authedUser";
 
 import { store } from "../../store";
 import NavBar from "./NavBar";
@@ -60,7 +60,7 @@ describe("NavBar component", () => {
   });
 
   test("should display username of logged in user", () => {
-    store.dispatch(setAuthedUser({ id: "sarahedo", password: "" }));
+    store.dispatch(employeeUser({ id: "sarahedo", password: "" }));
 
     const component = render(
       <Provider store={store}>

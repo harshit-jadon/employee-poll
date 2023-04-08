@@ -1,27 +1,27 @@
-export const RECEIVE_USERS = "RECEIVE_USERS";
-export const ADD_ANSWER_USER = "ADD_ANSWER_USER";
-export const ADD_QUESTION_USER = "ADD_QUESTION_USER";
+export const ADD_QUESTION_EMPL = "ADD_QUESTION_EMPL";
+export const ADD_ANSWER_EMPL = "ADD_ANSWER_EMPL";
+export const RECEIVE_EMPL = "RECEIVE_EMPL";
 
-export function receiveUsers(users) {
+export function addQuestionEmpl({ author, id }) {
   return {
-    type: RECEIVE_USERS,
-    users,
+    type: ADD_QUESTION_EMPL,
+    author,
+    qid: id,
   };
 }
 
-export function addAnswerUser(authedUser, qid, answer) {
+export function addAnswerEmpl(authedUser, qid, answer) {
   return {
-    type: ADD_ANSWER_USER,
+    type: ADD_ANSWER_EMPL,
     authedUser,
     qid,
     answer,
   };
 }
 
-export function addQuestionUser({ author, id }) {
+export function receiveEmpl(users) {
   return {
-    type: ADD_QUESTION_USER,
-    author,
-    qid: id,
+    type: RECEIVE_EMPL,
+    users,
   };
 }

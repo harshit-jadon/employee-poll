@@ -1,12 +1,12 @@
 import "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { handleLogout } from "../../actions/authedUser";
+import { logoutApp } from "../../actions/authedUser";
 
 const NavBar = ({ employeeId, employeeAvatar, dispatch }) => {
   
   const logoutEmployee = (e) => {
-    dispatch(handleLogout());
+    dispatch(logoutApp());
     e.preventDefault();
   };
 

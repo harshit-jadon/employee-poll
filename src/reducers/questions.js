@@ -1,6 +1,6 @@
 import {
-  ADD_ANSWER_QUESTION,
-  ADD_QUESTION,
+  ADD_QUESTION_ANSWER,
+  ADD_ONLY_QUESTION,
   RECEIVE_QUESTIONS,
 } from "../actions/questions";
 
@@ -11,12 +11,12 @@ export default function questions(state = {}, action) {
         ...state,
         ...action.questions,
       };
-    case ADD_QUESTION:
+    case ADD_ONLY_QUESTION:
       return {
         ...state,
         [action.question.id]: action.question,
       };
-    case ADD_ANSWER_QUESTION:
+    case ADD_QUESTION_ANSWER:
       return {
         ...state,
         [action.qid]: {

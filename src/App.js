@@ -10,11 +10,12 @@ import NewPollPage from "../src/components/newPollPage/NewPollPage";
 import Leaderboard from "./components/leaderBoard/Leaderboard";
 import PollPage from "../src/components/pollPage/PollPage";
 import Error404 from "./components/404";
-import { handleInitialData } from "./actions/shared";
+import { handleDataInitial } from "./actions/shared";
 
 function App({ dispatch, login }) {
+
   useEffect(() => {
-    dispatch(handleInitialData());
+    dispatch(handleDataInitial());
   });
 
   return (

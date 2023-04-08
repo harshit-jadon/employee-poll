@@ -3,7 +3,7 @@
   import { useLocation, Navigate } from 'react-router-dom';
   import LoginPageSvg from "../../images/employee1.png";
   import { connect } from "react-redux";
-  import { handleLogin } from "../../actions/authedUser";
+  import { loginToApp } from "../../actions/authedUser";
 
   const LoginPage = ({login, dispatch }) => {
     const [username, setUsername] = useState("");
@@ -13,7 +13,7 @@
     const handleSubmit = (e) => {
       setUsername("");
       setPassword("");
-      dispatch(handleLogin(username, password));
+      dispatch(loginToApp(username, password));
       e.preventDefault();
     };
 

@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { fireEvent, render } from "@testing-library/react";
 import { store } from "../../store";
-import { handleInitialData } from "../../actions/shared";
+import { handleDataInitial } from "../../actions/shared";
 import LoginPage from "./LoginPage";
 
 describe("Login page component", () => {
@@ -66,7 +66,7 @@ describe("Login page component", () => {
   });
 
   it("should clear input elements after clicking submit button", async () => {
-    await store.dispatch(handleInitialData());
+    await store.dispatch(handleDataInitial());
     const loginPagecomp = render(
       <Provider store={store}>
         <BrowserRouter>

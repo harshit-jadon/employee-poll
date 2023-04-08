@@ -1,9 +1,26 @@
 import { saveQuestion, saveQuestionAnswer } from "../util/api";
-import { addAnswerUser, addQuestionUser } from "./users";
+import { addAnswerEmpl, addQuestionEmpl } from "./users";
 
-export const ADD_QUESTION = "ADD_QUESTION";
-export const ADD_ANSWER_QUESTION = "ADD_ANSWER_QUESTION";
+export const ADD_QUESTION_ANSWER = "ADD_QUESTION_ANSWER";
+export const ADD_ONLY_QUESTION = "ADD_ONLY_QUESTION";
 export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
+
+
+function addQuestionAnswer(author, qid, answer) {
+  return {
+    type: ADD_QUESTION_ANSWER,
+    author,
+    qid,
+    answer,
+  };
+}
+
+function addOnlyQuestion(question) {
+  return {
+    type: ADD_ONLY_QUESTION,
+    question,
+  };
+}
 
 export function receiveQuestions(questions) {
   return {
@@ -12,41 +29,27 @@ export function receiveQuestions(questions) {
   };
 }
 
-function addQuestion(question) {
-  return {
-    type: ADD_QUESTION,
-    question,
-  };
-}
 
-function addAnswerQuestion(author, qid, answer) {
-  return {
-    type: ADD_ANSWER_QUESTION,
-    author,
-    qid,
-    answer,
-  };
-}
-
-export function handleAddQuestion(firstOption, secondOption) {
+export function addAnswerFnc(questionId, answer) {
   return (dispatch, getState) => {
     const { authedUser } = getState();
+    return saveQuestionAnswer(authedUser.id, questionId, answer).then(() => {
+      dispatch(addQuestionAnswer(authedUser.id, questionId, answer));
+      dispatch(addAnswerEmpl(authedUser.id, questionId, answer));
+    });
+  };
+}
 
+export function addQuestionFnc(firstOption, secondOption) {
+  return (dispatch, getState) => {
+    const { authedUser } = getState();
     return saveQuestion(firstOption, secondOption, authedUser).then(
       (question) => {
-        dispatch(addQuestion(question));
-        dispatch(addQuestionUser(question));
+        dispatch(addOnlyQuestion(question));
+        dispatch(addQuestionEmpl(question));
       }
     );
   };
 }
 
-export function handleAddAnswer(questionId, answer) {
-  return (dispatch, getState) => {
-    const { authedUser } = getState();
-    return saveQuestionAnswer(authedUser.id, questionId, answer).then(() => {
-      dispatch(addAnswerQuestion(authedUser.id, questionId, answer));
-      dispatch(addAnswerUser(authedUser.id, questionId, answer));
-    });
-  };
-}
+

@@ -2,9 +2,9 @@ import "./NewPollPage.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
-import { handleAddQuestion } from "../../actions/questions";
+import { addQuestionFnc } from "../../actions/questions";
 
-const NewPollPage = ({ handleAddQuestion }) => {
+const NewPollPage = ({ addQuestionFnc }) => {
   
   const [optOne, setOptOne] = useState("");
   const [optTwo, setOptTwo] = useState("");
@@ -12,7 +12,7 @@ const NewPollPage = ({ handleAddQuestion }) => {
   const navigate = useNavigate();
 
   const submitNewPoll = (e) => {
-    handleAddQuestion(optOne, optTwo);
+    addQuestionFnc(optOne, optTwo);
     navigate("/");
     e.preventDefault();
   };
@@ -75,7 +75,7 @@ const NewPollPage = ({ handleAddQuestion }) => {
 };
 
 const mapDispatchToProps = {
-  handleAddQuestion,
+  addQuestionFnc,
 };
 
 export default connect(null, mapDispatchToProps)(NewPollPage);
