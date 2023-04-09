@@ -6,8 +6,8 @@
   import { loginToApp } from "../../actions/authedUser";
 
   const LoginPage = ({login, dispatch }) => {
-    const [username, setUsername] = useState("sarahedo");
-    const [password, setPassword] = useState("password123");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const { search } = useLocation();
 
     const handleSubmit = (e) => {

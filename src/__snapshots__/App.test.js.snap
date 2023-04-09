@@ -40,7 +40,7 @@ Object {
                   data-testid="username-input"
                   placeholder="User"
                   type="text"
-                  value="sarahedo"
+                  value=""
                 />
               </div>
             </div>
@@ -61,7 +61,7 @@ Object {
                   data-testid="password-input"
                   placeholder="Password"
                   type="password"
-                  value="password123"
+                  value=""
                 />
               </div>
             </div>
@@ -69,7 +69,7 @@ Object {
               class="submit-btn"
             >
               <button
-                class="submit"
+                class="disable-submit"
                 data-testid="submit-button"
                 type="submit"
               >
@@ -117,7 +117,7 @@ Object {
                 data-testid="username-input"
                 placeholder="User"
                 type="text"
-                value="sarahedo"
+                value=""
               />
             </div>
           </div>
@@ -138,7 +138,7 @@ Object {
                 data-testid="password-input"
                 placeholder="Password"
                 type="password"
-                value="password123"
+                value=""
               />
             </div>
           </div>
@@ -146,7 +146,7 @@ Object {
             class="submit-btn"
           >
             <button
-              class="submit"
+              class="disable-submit"
               data-testid="submit-button"
               type="submit"
             >
