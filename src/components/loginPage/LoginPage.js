@@ -6,8 +6,8 @@
   import { loginToApp } from "../../actions/authedUser";
 
   const LoginPage = ({login, dispatch }) => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("sarahedo");
+    const [password, setPassword] = useState("password123");
     const { search } = useLocation();
 
     const handleSubmit = (e) => {
@@ -22,6 +22,8 @@
       const redirectUrl = params.get("redirectTo");
       return <Navigate to={redirectUrl || "/"} />;
     }
+
+    const isSubmitDisabled = (username === "" || password === "");
 
     return (
       <div className="head-container" >
@@ -62,7 +64,7 @@
             </div>
           </div>
           <div className="submit-btn">
-            <button type="submit" data-testid="submit-button" className="submit">
+            <button type="submit" data-testid="submit-button" className={`${isSubmitDisabled ? "disable-submit" :"submit"}`}>
               Login
             </button>
           </div>

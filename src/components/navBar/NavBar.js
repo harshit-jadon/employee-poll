@@ -14,20 +14,21 @@ const NavBar = ({ employeeId, employeeAvatar, dispatch }) => {
     <nav className="nav-bar" >
       <div className="nav-bar-link">
         <NavLink
-          className="link"
+          className={`link ${({isActive}) => (isActive ? "active-style" : 'none')}`}
           to="/"
-          activeclassName="active"
         >
           Home
         </NavLink>
         <NavLink
-          className="link"
+          className={`link ${({isActive}) => (isActive ? "active-style" : 'none')}`}
           to="/leaderboard"
-          activeclassName="active"
         >
           Leaderboard
         </NavLink>
-        <NavLink className="link" to="/new" activeclassName="active">
+        <NavLink 
+        className={`link ${({isActive}) => (isActive ? "active-style" : 'none')}`}
+        to="/add" 
+        >
           New
         </NavLink>
       </div>

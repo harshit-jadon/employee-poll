@@ -3,10 +3,12 @@ import { useMemo } from "react";
 import "./Leaderboard.css";
 
 const Leaderboard = ({ employees }) => {
-
   const sortedUsers = useMemo(() => {
     return Object.values(employees).sort(
-      (a, b) => Object.keys(b.answers).length - Object.keys(a.answers).length
+      (a, b) =>
+        Object.keys(b.answers).length +
+        Object.keys(b.questions).length -
+        (Object.keys(a.answers).length + Object.keys(a.questions).length)
     );
   }, [employees]);
 

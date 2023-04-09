@@ -12,24 +12,27 @@ Object {
           class="nav-bar-link"
         >
           <a
-            activeclassname="active"
             aria-current="page"
-            class="link active"
+            class="link ({
+          isActive
+        }) => isActive ? \\"active-style\\" : 'none' active"
             href="/"
           >
             Home
           </a>
           <a
-            activeclassname="active"
-            class="link"
+            class="link ({
+          isActive
+        }) => isActive ? \\"active-style\\" : 'none'"
             href="/leaderboard"
           >
             Leaderboard
           </a>
           <a
-            activeclassname="active"
-            class="link"
-            href="/new"
+            class="link ({
+          isActive
+        }) => isActive ? \\"active-style\\" : 'none'"
+            href="/add"
           >
             New
           </a>
@@ -66,24 +69,27 @@ Object {
         class="nav-bar-link"
       >
         <a
-          activeclassname="active"
           aria-current="page"
-          class="link active"
+          class="link ({
+          isActive
+        }) => isActive ? \\"active-style\\" : 'none' active"
           href="/"
         >
           Home
         </a>
         <a
-          activeclassname="active"
-          class="link"
+          class="link ({
+          isActive
+        }) => isActive ? \\"active-style\\" : 'none'"
           href="/leaderboard"
         >
           Leaderboard
         </a>
         <a
-          activeclassname="active"
-          class="link"
-          href="/new"
+          class="link ({
+          isActive
+        }) => isActive ? \\"active-style\\" : 'none'"
+          href="/add"
         >
           New
         </a>

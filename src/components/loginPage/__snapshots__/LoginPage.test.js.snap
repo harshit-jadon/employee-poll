@@ -39,7 +39,7 @@ Object {
                 data-testid="username-input"
                 placeholder="User"
                 type="text"
-                value=""
+                value="sarahedo"
               />
             </div>
           </div>
@@ -60,7 +60,7 @@ Object {
                 data-testid="password-input"
                 placeholder="Password"
                 type="password"
-                value=""
+                value="password123"
               />
             </div>
           </div>
@@ -114,7 +114,7 @@ Object {
               data-testid="username-input"
               placeholder="User"
               type="text"
-              value=""
+              value="sarahedo"
             />
           </div>
         </div>
@@ -135,7 +135,7 @@ Object {
               data-testid="password-input"
               placeholder="Password"
               type="password"
-              value=""
+              value="password123"
             />
           </div>
         </div>

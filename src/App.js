@@ -32,7 +32,7 @@ function App({ dispatch, login }) {
           }
         />
         <Route
-          path="/new"
+          path="/add"
           exact
           element={
             <PrivateRoute>
@@ -59,6 +59,7 @@ function App({ dispatch, login }) {
         />
 
         <Route path="/404" exact element={<Error404 />} />
+        <Route path="/*" exact element={<Error404 />} />
       </Routes>
     </div>
   );
