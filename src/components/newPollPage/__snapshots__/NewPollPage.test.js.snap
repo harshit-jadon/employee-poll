@@ -64,7 +64,7 @@ Object {
             class="submit-btn-poll"
           >
             <button
-              class="submit-poll"
+              class="disable-submit"
               data-testid="submit-button"
               type="submit"
             >
@@ -135,7 +135,7 @@ Object {
           class="submit-btn-poll"
         >
           <button
-            class="submit-poll"
+            class="disable-submit"
             data-testid="submit-button"
             type="submit"
           >

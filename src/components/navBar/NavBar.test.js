@@ -54,7 +54,7 @@ describe("NavBar component", () => {
         </BrowserRouter>
       </Provider>
     );
-    const newLink = navBarComp.getByText(/add/i);
+    const newLink = navBarComp.getByText(/New/i);
     expect(newLink).toBeInTheDocument();
     expect(newLink).toHaveAttribute("href", "/add");
   });
